@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CV Andrés Felipe González González</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --navy: #0A2540;
+    --cyan: #00D4FF;
+    --neon: #00FF9D;
+    --amber: #E67E22;
+    --white: #FFFFFF;
+    --gray-50: #F9FAFB;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-800: #1E293B;
+}
+body { font-family: 'Inter', sans-serif; font-size: 9px; color: var(--gray-800); line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* PAGE */
+.page {
+    width: 8.5in; height: 11in;
+    display: grid;
+    grid-template-columns: 2.3in 1fr;
+    page-break-after: always;
+    overflow: hidden;
+}
+.page:last-child { page-break-after: avoid; }
+
+/* SIDEBAR */
+.sidebar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 30px 18px;
+    height: 100%;
+}
+.sidebar-section { margin-bottom: 18px; }
+.sidebar-title {
+    font-size: 8px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--cyan); margin-bottom: 10px;
+    padding-bottom: 5px; border-bottom: 1px solid rgba(0,212,255,0.2);
+}
+.contact-item { display: flex; gap: 8px; margin-bottom: 7px; font-size: 8px; color: rgba(255,255,255,0.85); }
+.contact-dot { width: 4px; height: 4px; background: var(--cyan); border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+
+/* Photo */
+.photo-box {
+    width: 120px; height: 160px;
+    border-top-left-radius: 0; border-top-right-radius: 0;
+    border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;
+    overflow: hidden; margin: 0 auto 20px;
+    border: 2px solid rgba(0,212,255,0.3); border-top: none;
+}
+.photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+/* Tech pills */
+.pill { display: inline-block; padding: 2px 7px; margin: 2px 1px; border-radius: 10px; font-size: 7px; font-weight: 500; background: rgba(0,212,255,0.1); color: rgba(255,255,255,0.85); border: 1px solid rgba(0,212,255,0.2); }
+.pill.f { background: var(--cyan); color: var(--navy); font-weight: 600; border-color: var(--cyan); }
+
+/* Soft items */
+.s-item { margin-bottom: 5px; font-size: 7.5px; color: rgba(255,255,255,0.8); padding-left: 10px; position: relative; }
+.s-item::before { content: ''; position: absolute; left: 0; top: 4px; width: 4px; height: 4px; background: var(--cyan); border-radius: 50%; }
+
+/* Lang bar */
+.lang-row { display: flex; justify-content: space-between; font-size: 8px; color: rgba(255,255,255,0.85); margin-bottom: 3px; }
+.lang-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 8px; }
+.lang-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--cyan), var(--neon)); }
+
+/* MAIN */
+.main { padding: 30px 28px; height: 100%; }
+
+/* Header block */
+.name { font-size: 22px; font-weight: 800; color: var(--gray-800); line-height: 1.1; margin-bottom: 4px; }
+.role { font-size: 10px; font-weight: 500; color: var(--cyan); letter-spacing: 1px; margin-bottom: 2px; }
+.subrole { font-size: 8px; color: var(--gray-500); margin-bottom: 14px; }
+
+/* Section */
+.sec-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--navy); margin-bottom: 10px; padding-bottom: 4px; border-bottom: 2px solid var(--gray-200); }
+
+/* Profile */
+.profile { font-size: 8.5px; line-height: 1.7; color: var(--gray-600); margin-bottom: 16px; padding: 10px 12px; background: var(--gray-100); border-radius: 8px; border-left: 3px solid var(--cyan); }
+
+/* Experience */
+.exp { margin-bottom: 14px; padding: 10px 12px; background: var(--gray-50); border-radius: 8px; border-left: 3px solid var(--neon); }
+.exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
+.exp-company { font-size: 9px; font-weight: 700; color: var(--navy); }
+.exp-date { font-size: 7px; font-weight: 600; color: var(--cyan); background: rgba(0,212,255,0.08); padding: 2px 6px; border-radius: 8px; }
+.exp-role { font-size: 8px; font-weight: 600; color: var(--gray-600); margin-bottom: 2px; }
+.exp-loc { font-size: 7px; color: var(--gray-400); margin-bottom: 6px; }
+.exp-list { list-style: none; padding: 0; }
+.exp-list li { font-size: 8px; line-height: 1.6; color: var(--gray-600); margin-bottom: 3px; padding-left: 10px; position: relative; }
+.exp-list li::before { content: ''; position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--neon); border-radius: 50%; }
+.exp-tech { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+.exp-tech span { font-size: 6.5px; padding: 1px 5px; background: var(--gray-200); border-radius: 3px; color: var(--gray-600); }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sk-card { padding: 10px; background: var(--gray-50); border-radius: 8px; border: 1px solid var(--gray-200); }
+.sk-title { font-size: 8px; font-weight: 700; color: var(--navy); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.sk-bar-item { margin-bottom: 5px; }
+.sk-label { display: flex; justify-content: space-between; font-size: 7.5px; color: var(--gray-600); margin-bottom: 2px; }
+.sk-bar { height: 4px; background: var(--gray-200); border-radius: 3px; }
+.sk-fill { height: 100%; border-radius: 3px; }
+.sk-fill.c { background: linear-gradient(90deg, var(--cyan), #66E3FF); }
+.sk-fill.n { background: linear-gradient(90deg, var(--neon), #66FFBF); }
+.sk-fill.a { background: linear-gradient(90deg, var(--amber), #F5A623); }
+
+/* Projects */
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.proj { padding: 10px; background: var(--gray-50); border-radius: 8px; border: 1px solid var(--gray-200); border-top: 2px solid var(--cyan); }
+.proj-title { font-size: 8px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.proj-desc { font-size: 7px; color: var(--gray-600); line-height: 1.5; margin-bottom: 6px; }
+.proj-tech { display: flex; flex-wrap: wrap; gap: 2px; }
+.proj-tech span { font-size: 6px; padding: 1px 4px; background: var(--gray-200); border-radius: 3px; color: var(--gray-600); }
+
+/* Education */
+.edu { margin-bottom: 8px; padding: 8px 12px; background: var(--gray-50); border-radius: 6px; }
+.edu-deg { font-size: 8.5px; font-weight: 600; color: var(--navy); }
+.edu-sch { font-size: 7.5px; color: var(--gray-500); }
+.edu-yr { font-size: 7px; color: var(--gray-400); }
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1 ========== -->
+<div class="page">
+<aside class="sidebar">
+<div class="photo-box">
+<img src="andres.png" alt="Andrés Felipe González González">
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Contacto</div>
+<div class="contact-item"><span class="contact-dot"></span><span>Dosquebradas, Risaralda, Colombia</span></div>
+<div class="contact-item"><span class="contact-dot"></span><span>andrex600@gmail.com</span></div>
+<div class="contact-item"><span class="contact-dot"></span><span>(+57) 320 697 5494</span></div>
+<div class="contact-item"><span class="contact-dot"></span><span>github.com/andresG-hub</span></div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Idiomas</div>
+<div class="lang-row"><span>Español</span><span>Nativo</span></div>
+<div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+<div class="lang-row"><span>Inglés</span><span>B2</span></div>
+<div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Tecnologías</div>
+<span class="pill f">ESP32</span>
+<span class="pill f">Python</span>
+<span class="pill f">OpenCV</span>
+<span class="pill f">TensorFlow</span>
+<span class="pill">Raspberry Pi</span>
+<span class="pill">Arduino</span>
+<span class="pill">PLC</span>
+<span class="pill">MQTT</span>
+<span class="pill">LoRa</span>
+<span class="pill">SolidWorks</span>
+<span class="pill">KiCad</span>
+<span class="pill">JavaScript</span>
+<span class="pill">C/C++</span>
+<span class="pill">SCADA</span>
+<span class="pill">Modbus</span>
+<span class="pill">HTML/CSS</span>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Formación Complementaria</div>
+<div class="s-item">Dispositivos de Lógica Programable</div>
+<div class="s-item">PLC e Instrumentación Industrial</div>
+<div class="s-item">Procesamiento Digital de Imágenes</div>
+<div class="s-item">Java Avanzado</div>
+<div class="s-item">Six Sigma & Lean Manufacturing</div>
+</div>
+</aside>
+<main class="main">
+<h1 class="name">Andrés Felipe<br>González González</h1>
+<p class="role">Ingeniero Mecatrónico | Lead Mechatronics Teacher</p>
+<p class="subrole">IoT & AI Developer · Product Engineer · Innovation Leader</p>
+
+<div class="profile">
+Ingeniero Mecatrónico con más de 12 años de experiencia liderando proyectos de innovación tecnológica en automatización industrial, sistemas embebidos, IoT, inteligencia artificial y desarrollo de producto. Fundador y líder de la modalidad de Mecatrónica del Instituto Tecnológico de Dosquebradas, donde diseñé e implementé un currículo integral basado en Industria 4.0, fabricación digital, visión por computador y agentes de IA. Experiencia internacional en diseño mecánico (EE.UU.) y desarrollo de producto aeronáutico certificado por la Fuerza Aérea Colombiana.
+</div>
+
+<div class="sec-title">Experiencia Profesional</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Instituto Tecnológico de Dosquebradas by Fundación Frisby</span>
+<span class="exp-date">Ene 2020 – Actualidad</span>
+</div>
+<p class="exp-role">Docente Líder – Modalidad de Mecatrónica</p>
+<p class="exp-loc">Dosquebradas, Risaralda</p>
+<ul class="exp-list">
+<li>Fundé la modalidad técnica de Mecatrónica desde cero, diseñando el currículo completo con enfoque en Industria 4.0, IoT, IA y fabricación digital.</li>
+<li>Integré tecnologías de vanguardia (ESP32, Raspberry Pi, OpenCV, TensorFlow) en proyectos educativos con impacto en más de 200 estudiantes.</li>
+<li>Desarrollé proyectos de visión por computador y agentes de inteligencia artificial aplicados a automatización.</li>
+<li>Implementé metodologías Design Thinking y creé semilleros de innovación en ferias tecnológicas regionales.</li>
+</ul>
+<div class="exp-tech"><span>ESP32</span><span>Raspberry Pi</span><span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>IoT</span><span>PLC</span></div>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Cindetemm – Centro de Innovación y Desarrollo Tecnológico</span>
+<span class="exp-date">Nov 2015 – Oct 2018</span>
+</div>
+<p class="exp-role">Ingeniero de Desarrollo</p>
+<p class="exp-loc">Dosquebradas, Risaralda</p>
+<ul class="exp-list">
+<li>Lideré el desarrollo de un producto aeronáutico (kit Garmin 1000) certificado por la Fuerza Aérea Colombiana.</li>
+<li>Ejecuté ensayos no destructivos mediante termografía y análisis de vibraciones.</li>
+<li>Diseñé y fabriqué PCBs SMD/THT para prototipos industriales de alta confiabilidad.</li>
+<li>Construí impresoras 3D FDM y máquinas CNC de 3 ejes.</li>
+</ul>
+<div class="exp-tech"><span>PCB Design</span><span>Termografía</span><span>CNC</span><span>3D Printing</span><span>SolidWorks</span><span>KiCad</span></div>
+</div>
+
+</main>
+</div>
+
+<!-- ========== PAGE 2 ========== -->
+<div class="page">
+<aside class="sidebar">
+<div class="sidebar-section" style="margin-top:30px">
+<div class="sidebar-title">Habilidades Clave</div>
+<div class="s-item">Pensamiento Innovador</div>
+<div class="s-item">Liderazgo Técnico</div>
+<div class="s-item">Diseño Curricular</div>
+<div class="s-item">Gestión de Proyectos</div>
+<div class="s-item">Design Thinking</div>
+<div class="s-item">Resolución de Problemas</div>
+<div class="s-item">Trabajo en Equipo</div>
+<div class="s-item">Comunicación Efectiva</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Keywords ATS</div>
+<span class="pill">Embedded Systems</span>
+<span class="pill">AI</span>
+<span class="pill">Machine Learning</span>
+<span class="pill">Computer Vision</span>
+<span class="pill">IoT</span>
+<span class="pill">Product Development</span>
+<span class="pill">PCB Design</span>
+<span class="pill">Industrial Automation</span>
+<span class="pill">Wireless</span>
+<span class="pill">WiFi</span>
+<span class="pill">Bluetooth</span>
+<span class="pill">CAD</span>
+<span class="pill">Innovation</span>
+<span class="pill">Leadership</span>
+<span class="pill">Curriculum Design</span>
+</div>
+</aside>
+<main class="main">
+
+<div class="sec-title">Experiencia Profesional (cont.)</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Glass Door Solutions (GDS)</span>
+<span class="exp-date">May 2013 – 2017</span>
+</div>
+<p class="exp-role">Ingeniero de Diseño</p>
+<p class="exp-loc">Elkton, Kentucky, Estados Unidos</p>
+<ul class="exp-list">
+<li>Ejecuté diseño mecánico avanzado en SolidWorks con simulación CFD y FEA para sistemas de enfriamiento.</li>
+<li>Optimicé diseños de puertas de vidrio comerciales mediante análisis térmico computacional.</li>
+</ul>
+<div class="exp-tech"><span>SolidWorks</span><span>CFD</span><span>FEA</span><span>Diseño Mecánico</span></div>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">MetGroup (HTD)</span>
+<span class="exp-date">May 2014 – Feb 2015</span>
+</div>
+<p class="exp-role">Ingeniero de Línea Electrónica</p>
+<p class="exp-loc">Colombia</p>
+<ul class="exp-list">
+<li>Optimicé procesos de manufactura electrónica con Six Sigma, reduciendo defectos en producción.</li>
+<li>Programé equipos Pick & Place y gestioné procesos de refusión SMD a escala industrial.</li>
+</ul>
+<div class="exp-tech"><span>Six Sigma</span><span>Pick & Place</span><span>PCB</span><span>SMD</span></div>
+</div>
+
+<div class="exp">
+<div class="exp-top">
+<span class="exp-company">Cámara de Comercio de Dosquebradas</span>
+<span class="exp-date">Ene 2015 – Jul 2015</span>
+</div>
+<p class="exp-role">Contratista – Proyecto CLARE (INNPULSA)</p>
+<p class="exp-loc">Dosquebradas, Risaralda</p>
+<ul class="exp-list">
+<li>Asistencia técnica proyecto INNPULSA CER007-004, formando emprendedores en electrónica y mecánica.</li>
+<li>Co-organicé la feria tecnológica THINK-IT.</li>
+</ul>
+<div class="exp-tech"><span>Electrónica</span><span>Innovación</span><span>Emprendimiento</span></div>
+</div>
+
+<div style="margin-top:16px">
+<div class="sec-title">Competencias</div>
+<div class="skills-grid">
+<div class="sk-card">
+<div class="sk-title">Inteligencia Artificial</div>
+<div class="sk-bar-item"><div class="sk-label"><span>Machine Learning</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:90%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Computer Vision</span><span>92%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:92%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>TensorFlow</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:85%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>OpenCV</span><span>93%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:93%"></div></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-title">Sistemas Embebidos & IoT</div>
+<div class="sk-bar-item"><div class="sk-label"><span>ESP32</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:95%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Arduino</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:95%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Raspberry Pi</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:90%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>MQTT / LoRa</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:85%"></div></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-title">Automatización Industrial</div>
+<div class="sk-bar-item"><div class="sk-label"><span>PLC / Ladder</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:88%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>SCADA / HMI</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:85%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Modbus / PID</span><span>87%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:87%"></div></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-title">CAD & Fabricación Digital</div>
+<div class="sk-bar-item"><div class="sk-label"><span>SolidWorks</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:90%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Impresión 3D / CNC</span><span>92%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:92%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>PCB (KiCad/Eagle)</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill c" style="width:90%"></div></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-title">Programación</div>
+<div class="sk-bar-item"><div class="sk-label"><span>Python</span><span>92%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:92%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>C / C++</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:88%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>JavaScript</span><span>80%</span></div><div class="sk-bar"><div class="sk-fill n" style="width:80%"></div></div></div>
+</div>
+<div class="sk-card">
+<div class="sk-title">Liderazgo & Innovación</div>
+<div class="sk-bar-item"><div class="sk-label"><span>Diseño Curricular</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:95%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Gestión de Proyectos</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:90%"></div></div></div>
+<div class="sk-bar-item"><div class="sk-label"><span>Design Thinking</span><span>88%</span></div><div class="sk-bar"><div class="sk-fill a" style="width:88%"></div></div></div>
+</div>
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- ========== PAGE 3 ========== -->
+<div class="page">
+<aside class="sidebar">
+<div class="sidebar-section" style="margin-top:30px">
+<div class="sidebar-title">Formación Académica</div>
+<div style="margin-bottom:10px">
+<div style="font-size:8px;font-weight:600;color:var(--white)">Ingeniería Mecatrónica</div>
+<div style="font-size:7px;color:var(--gray-400)">Universidad Tecnológica de Pereira</div>
+<div style="font-size:7px;color:var(--gray-400)">2011 – 2013</div>
+</div>
+<div style="margin-bottom:10px">
+<div style="font-size:8px;font-weight:600;color:var(--white)">Tecnología en Mecatrónica</div>
+<div style="font-size:7px;color:var(--gray-400)">Universidad Tecnológica de Pereira</div>
+<div style="font-size:7px;color:var(--gray-400)">2010</div>
+</div>
+<div style="margin-bottom:10px">
+<div style="font-size:8px;font-weight:600;color:var(--white)">Técnico Profesional en Mecatrónica</div>
+<div style="font-size:7px;color:var(--gray-400)">Universidad Tecnológica de Pereira</div>
+<div style="font-size:7px;color:var(--gray-400)">2008 – 2009</div>
+</div>
+</div>
+<div class="sidebar-section">
+<div class="sidebar-title">Referencias</div>
+<div style="margin-bottom:8px">
+<div style="font-size:7.5px;font-weight:600;color:var(--white)">Mauricio Velásquez</div>
+<div style="font-size:7px;color:var(--gray-400)">Instituto Tecnológico Dosquebradas</div>
+<div style="font-size:7px;color:var(--gray-400)">(+57) 311 328 5916</div>
+</div>
+<div style="margin-bottom:8px">
+<div style="font-size:7.5px;font-weight:600;color:var(--white)">Sebastián Nieto</div>
+<div style="font-size:7px;color:var(--gray-400)">Cindetemm</div>
+<div style="font-size:7px;color:var(--gray-400)">310 487 3639</div>
+</div>
+<div style="margin-bottom:8px">
+<div style="font-size:7.5px;font-weight:600;color:var(--white)">Tom Whitney</div>
+<div style="font-size:7px;color:var(--gray-400)">Glass Door Solutions</div>
+<div style="font-size:7px;color:var(--gray-400)">270 604 6002</div>
+</div>
+</div>
+</aside>
+<main class="main">
+
+<div class="sec-title">Proyectos Destacados</div>
+<div class="proj-grid">
+<div class="proj">
+<div class="proj-title">Producto Aeronáutico FAC</div>
+<div class="proj-desc">Desarrollo completo del kit de perillas Garmin 1000, certificado por la Fuerza Aérea Colombiana. Desde diseño electrónico hasta manufactura y validación.</div>
+<div class="proj-tech"><span>PCB</span><span>SolidWorks</span><span>Manufactura</span><span>Certificación FAC</span></div>
+</div>
+<div class="proj">
+<div class="proj-title">SCADA Domótico Multiplataforma</div>
+<div class="proj-desc">Sistema SCADA con PLC y protocolo Modbus para control inteligente de iluminación, seguridad y eficiencia energética.</div>
+<div class="proj-tech"><span>PLC</span><span>SCADA</span><span>Modbus</span><span>HMI</span><span>IoT</span></div>
+</div>
+<div class="proj">
+<div class="proj-title">Laboratorio de Fabricación Digital</div>
+<div class="proj-desc">Construcción de impresoras 3D FDM, CNC de 3 ejes y termoformadora para prototipado rápido industrial.</div>
+<div class="proj-tech"><span>3D Printing</span><span>CNC</span><span>CAD</span><span>Manufactura</span></div>
+</div>
+<div class="proj">
+<div class="proj-title">Agentes de IA & Visión por Computador</div>
+<div class="proj-desc">Desarrollo de agentes inteligentes, modelos predictivos con ML y procesamiento digital de imágenes en tiempo real.</div>
+<div class="proj-tech"><span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>ML</span><span>Agentes IA</span></div>
+</div>
+<div class="proj">
+<div class="proj-title">Estabilizador de Vuelo PID</div>
+<div class="proj-desc">Sistema de estabilización para vehículos aéreos con sensores IMU y control PID embebido.</div>
+<div class="proj-tech"><span>PID</span><span>IMU</span><span>Embebidos</span><span>C++</span></div>
+</div>
+<div class="proj">
+<div class="proj-title">Escáner 3D por Visión</div>
+<div class="proj-desc">Reconstrucción tridimensional mediante visión por computador, triangulación láser y nubes de puntos.</div>
+<div class="proj-tech"><span>OpenCV</span><span>Python</span><span>Visión 3D</span><span>Point Cloud</span></div>
+</div>
+</div>
+
+</main>
+</div>
+
+</body>
+</html>
